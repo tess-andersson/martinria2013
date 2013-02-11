@@ -1,6 +1,6 @@
-/*
-* Sets the path to all the required modules
-*/  
+/**
+ * Sets the path to all the required modules.
+ */
 require.config({
 	paths: {
 		jquery: "lib/jquery/jquery",
