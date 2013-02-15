@@ -7,7 +7,8 @@ require.config({
 		underscore: "lib/underscore/underscore",
 		backbone: "lib/backbone/backbone",
 		"backbone-local":"lib/backbone/backbone.localStorage",
-    bootstrap: "lib/bootstrap/js/bootstrap"
+    bootstrap: "lib/bootstrap/js/bootstrap",
+    templates: "src/templates"
 	},
   shim: {
     underscore: {
@@ -22,8 +23,11 @@ require.config({
       exports: 'Backbone'
     }
   }
-});  
+});
 
-require(['src/views/hello'], function(HelloView) {
-  new HelloView;
+require([
+  'application',
+
+], function(Application){
+  Application.run();
 });

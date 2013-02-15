@@ -1,0 +1,41 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.nav li {
+  padding-top: 10px;
+}
+.leaderboard h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color:#FF6600;
+}
+.leaderboard p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 27px;
+}
+
+.navbar-inner {
+  background-color: #2c2c2c;
+
+  background-image: -moz-linear-gradient(top, #CCF2FF, #52D4FF);
+  background-image: -ms-linear-gradient(top, #CCF2FF, #52D4FF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CCF2FF), to(#52D4FF));
+  background-image: -webkit-linear-gradient(top, #CCF2FF, #52D4FF);
+  background-image: -o-linear-gradient(top, #CCF2FF, #52D4FF);
+  background-image: linear-gradient(top, #CCF2FF, #52D4FF);
+  background-repeat: repeat-x;
+
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCF2FF', endColorstr='#52D4FF', GradientType=0);
+}
+
+.navbar-inner .nav > li > a {
+  color: #ffffff !important;
+}
+
+.navbar-inner .nav > li > a:hover {
+  color: #A6A6A6 !important;
+}
