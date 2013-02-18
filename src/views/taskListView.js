@@ -38,8 +38,9 @@ define([
 
         var tasks = new TasksCollection([task1,task2]);
 
+        this.el.innerHTML = _.template(TaskListTemplate, tasks);
 
-        $('#content').html(this.el);
+        $('#main').html(this.el);
 
         return this;
       }

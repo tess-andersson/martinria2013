@@ -3,7 +3,7 @@ define([
   'underscore',
   'backbone',
   'src/views/taskListView'
-], function($, _, Backbone, TaskView) {
+], function($, _, Backbone, TaskListView) {
   
   var TodoRouter = Backbone.Router.extend({
     routes: {
@@ -34,8 +34,8 @@ define([
     });
 
     todoRouter.on('route:index', function(){
-      var taskView = new TaskView();
-      taskView.render();
+      var taskListView = new TaskListView();
+      taskListView.render();
     });
 
     Backbone.history.start();
