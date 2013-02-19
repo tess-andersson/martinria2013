@@ -2,8 +2,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'src/views/taskListView'
-], function($, _, Backbone, TaskListView) {
+  'src/views/taskListView',
+  'src/collections/tasksCollection'
+], function($, _, Backbone, TaskListView,TaskCollection) {
   
   var TodoRouter = Backbone.Router.extend({
     routes: {
@@ -20,6 +21,8 @@ define([
   var initialize = function(){
 
     var todoRouter = new TodoRouter;
+
+    window.tasks = new TaskCollection;
 
     todoRouter.on('route:showTask', function(){
         console.log("Show");

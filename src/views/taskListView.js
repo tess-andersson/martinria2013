@@ -19,6 +19,9 @@ define([
       */
       initialize: function(){
         _.bindAll(this, 'render');
+
+        window.tasks.fetch();
+
         this.render();
       },
 
@@ -30,15 +33,9 @@ define([
       * DOC
       */
       render: function(){
-        this.el.innerHTML = "HEJ";
+        console.log(window.tasks.localStorage);
 
-
-        var task1 = new TaskModel({ name: "Cool task 1!", description: "Cool description 1!" });
-        var task2 = new TaskModel({ name: "Cool task 2!", description: "Cool description 2!" });
-
-        var tasks = new TasksCollection([task1,task2]);
-
-        this.el.innerHTML = _.template(TaskListTemplate, tasks);
+        //this.el.innerHTML = _.template(TaskListTemplate, tasks);
 
         $('#main').html(this.el);
 

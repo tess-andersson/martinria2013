@@ -9,15 +9,15 @@ define([
   var TasksCollection = Backbone.Collection.extend({
     model: TaskModel,
     
-    localStorage: new Backbone.LocalStorage("taskollection"),
+    localStorage: new Backbone.LocalStorage("taskcollection"),
 
     /**
     * Initializes the model.
     */
     initialize: function(){
-        console.log("in collection")
+        //console.log("in collection")
 
-        //localStorage.setItem("key2","value2");
+        //localStorage.setItem("key3","value2");
         console.log(localStorage);
     }
 
