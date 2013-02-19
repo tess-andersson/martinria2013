@@ -5,9 +5,9 @@ define([
   'underscore',
   'backbone',
   'src/models/taskModel'
-], function( _, Backbone, TaskModel){
+], function( _, Backbone, Task){
   var TasksCollection = Backbone.Collection.extend({
-    model: TaskModel,
+    model: Task,
     
     localStorage: new Backbone.LocalStorage("taskcollection"),
 
@@ -18,7 +18,6 @@ define([
         //console.log("in collection")
 
         //localStorage.setItem("key3","value2");
-        console.log(localStorage);
     }
 
   });

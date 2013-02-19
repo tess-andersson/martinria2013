@@ -4,7 +4,7 @@ define([
   'backbone',
   'src/views/taskListView',
   'src/collections/tasksCollection'
-], function($, _, Backbone, TaskListView,TaskCollection) {
+], function($, _, Backbone, TaskListView,TasksCollection) {
   
   var TodoRouter = Backbone.Router.extend({
     routes: {
@@ -22,8 +22,6 @@ define([
 
     var todoRouter = new TodoRouter;
 
-    window.tasks = new TaskCollection;
-
     todoRouter.on('route:showTask', function(){
         console.log("Show");
     });
@@ -37,7 +35,8 @@ define([
     });
 
     todoRouter.on('route:index', function(){
-      var taskListView = new TaskListView();
+      var tasksCollection = new TasksCollection();
+      var taskListView = new TaskListView({collection: tasksCollection});
       taskListView.render();
     });
 

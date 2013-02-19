@@ -5,7 +5,7 @@ define([
   'src/models/taskModel',
   'src/collections/tasksCollection',
   'text!src/templates/taskListTemplate.html'
-  ], function($, _, Backbone,TaskModel,TasksCollection,TaskListTemplate){
+  ], function($, _, Backbone,Task,TasksCollection,TaskListTemplate){
 
   /**
     * DOC
@@ -20,8 +20,6 @@ define([
       initialize: function(){
         _.bindAll(this, 'render');
 
-        window.tasks.fetch();
-
         this.render();
       },
 
@@ -33,9 +31,22 @@ define([
       * DOC
       */
       render: function(){
-        console.log(window.tasks.localStorage);
 
-        //this.el.innerHTML = _.template(TaskListTemplate, tasks);
+        //var tasksCollection = new TasksCollection();
+
+        //console.log(this.model);
+
+        //console.log(localStorage);
+
+        this.collection.fetch();
+
+        this.collection.create({name:"testname2"});
+
+        var data = {
+          tasks: this.collection.toJSON()
+        };
+
+        this.el.innerHTML = _.template(TaskListTemplate,data);
 
         $('#main').html(this.el);
 

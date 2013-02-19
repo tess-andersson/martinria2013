@@ -21,7 +21,7 @@ define([
     * Initializes the model.
     */
     initialize: function() {
-       console.log("Task model created");
+       //console.log("Task model created");
     }
 
   });
