@@ -14,7 +14,8 @@ define([
     defaults: {
             name: "Task",
             description: "Task description",
-            created: new Date().getTime()
+            created: new Date().getTime(),
+            done: false
         },
 
     /**

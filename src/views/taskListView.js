@@ -40,7 +40,7 @@ define([
 
         this.collection.fetch();
 
-        this.collection.create({name:"testname2"});
+        //this.collection.create({name:"testname2"});
 
         var data = {
           tasks: this.collection.toJSON()

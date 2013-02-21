@@ -1,1 +1,12 @@
-<div>  <%= tasks.toSource() %> </div>
+<ul>
+  <% _.each(tasks, function(task){ %>
+  <li>
+    <% if (!task.done) {
+     print("<div class=taskName>" + task.name + "</div>");
+   }
+ else {
+  print("<div class=taskNameDone>" + task.name + "</div>");
+} %>
+</li>
+<% }); %>
+</ul>

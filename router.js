@@ -3,14 +3,15 @@ define([
   'underscore',
   'backbone',
   'src/views/taskListView',
+  'src/views/newTaskView',
   'src/collections/tasksCollection'
-], function($, _, Backbone, TaskListView,TasksCollection) {
+], function($, _, Backbone, TaskListView,NewTaskView,TasksCollection) {
   
   var TodoRouter = Backbone.Router.extend({
     routes: {
       "task/:id": "showTask",
       "edit/:id": "editTask",
-      "/new": "newTask",
+      "new": "newTask",
       "": "index"
     }
   });
@@ -31,7 +32,9 @@ define([
     });
 
     todoRouter.on('route:newTask', function(){
-      console.log("New");
+      var tasksCollection = new TasksCollection();
+      var newTaskView = new NewTaskView({collection: tasksCollection});
+      newTaskView.render();
     });
 
     todoRouter.on('route:index', function(){
