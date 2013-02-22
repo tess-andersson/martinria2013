@@ -32,15 +32,7 @@ define([
       */
       render: function(){
 
-        //var tasksCollection = new TasksCollection();
-
-        //console.log(this.model);
-
-        //console.log(localStorage);
-
         this.collection.fetch();
-
-        //this.collection.create({name:"testname2"});
 
         var data = {
           tasks: this.collection.toJSON()
