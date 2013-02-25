@@ -2,7 +2,7 @@
   <% _.each(tasks, function(task){ %>
   <li>
     <% if (!task.done) {
-     print("<div class=taskName>" + task.name + "</div>");
+     print("<a href='#task/" + task.id + "' class=taskName>" + task.name + "</a>");
    }
  else {
   print("<div class=taskNameDone>" + task.name + "</div>");
