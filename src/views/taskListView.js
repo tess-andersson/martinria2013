@@ -8,14 +8,14 @@ define([
   ], function($, _, Backbone,Task,TasksCollection,TaskListTemplate){
 
   /**
-    * DOC
+    * Creates a new view
     */
     var TaskView = Backbone.View.extend({
       tagName : "div",
       className : "taskList",
 
     /**
-      * DOC
+      * Initializes the view
       */
       initialize: function(){
         _.bindAll(this, 'render');
@@ -28,7 +28,7 @@ define([
       },
 
     /**
-      * DOC
+      * Renders the view
       */
       render: function(){
 

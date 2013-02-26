@@ -18,7 +18,7 @@ define([
     });
 
   /**
-    * DOC
+    * Initializes the router
     */
     var initialize = function(){
 

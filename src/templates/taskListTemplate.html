@@ -5,7 +5,7 @@
      print("<a href='#task/" + task.id + "' class=taskName>" + task.name + "</a>");
    }
  else {
-  print("<div class=taskNameDone>" + task.name + "</div>");
+  print("<a class='doneLink' href='#task/" + task.id + "' class=taskName>" + task.name + "</a>");
 } %>
 </li>
 <% }); %>

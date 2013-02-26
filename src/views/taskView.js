@@ -8,31 +8,29 @@ define([
   ], function($, _, Backbone,Task,TasksCollection,TaskDetailsTemplate){
 
   /**
-    * DOC
+    * Creates a new view
     */
     var TaskView = Backbone.View.extend({
-      tagName : "div",
-      className : "taskView",
+     el: $('#main'),
 
     /**
-      * DOC
+      * Initializes the view
       */
       initialize: function(){
-        _.bindAll(this, 'render');
+        _.bindAll(this);
 
         this.render();
       },
 
       events: {
-
+        "click #doneButton": "setAsDone",
       },
 
     /**
-      * DOC
+      * Renders the view
+      * @return {TaskView} The view object
       */
       render: function(){
-
-        //console.log(this.id)
 
         this.collection.fetch();
 
@@ -44,10 +42,20 @@ define([
 
         this.el.innerHTML = _.template(TaskDetailsTemplate,data);
 
-        $('#main').html(this.el);
+        return this;
+      },
+
+       /**
+      * Toggles the value of the objects 'done' property
+      * @param {event} e Events from the view
+      * @return {TaskView} The view object
+      */
+      setAsDone: function(e){
+        this.collection.get(this.id).toggleDone();
 
         return this;
       }
+
     });
 
     return TaskView;

@@ -1,15 +1,15 @@
 /**
  * Sets the path to all the required modules.
  */
-require.config({
-	paths: {
-		jquery: "lib/jquery/jquery",
-		underscore: "lib/underscore/underscore",
-		backbone: "lib/backbone/backbone",
-		"backbone-local":"lib/backbone/backbone.localStorage",
+ require.config({
+   paths: {
+    jquery: "lib/jquery/jquery",
+    underscore: "lib/underscore/underscore",
+    backbone: "lib/backbone/backbone",
+    "backbone-local":"lib/backbone/backbone.localStorage",
     bootstrap: "lib/bootstrap/js/bootstrap",
     templates: "src/templates"
-	},
+  },
   shim: {
     underscore: {
       exports: "_"
@@ -25,9 +25,9 @@ require.config({
   }
 });
 
-require([
+ require([
   'application',
 
-], function(Application){
-  Application.run();
-});
+  ], function(Application){
+    Application.run();
+  });
