@@ -39,3 +39,7 @@ body {
 .navbar-inner .nav > li > a:hover {
   color: #A6A6A6 !important;
 }
+
+.doneLink{
+  text-decoration: line-through;
+}

@@ -23,7 +23,7 @@ define([
       },
 
       events: {
-        "click #doneButton": "setAsDone",
+        "click #doneButton": "toggleDone",
       },
 
     /**
@@ -50,8 +50,12 @@ define([
       * @param {event} e Events from the view
       * @return {TaskView} The view object
       */
-      setAsDone: function(e){
+      toggleDone: function(e){
         this.collection.get(this.id).toggleDone();
+
+        this.undelegateEvents();
+
+        window.location.hash = '';
 
         return this;
       }

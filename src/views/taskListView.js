@@ -11,20 +11,19 @@ define([
     * Creates a new view
     */
     var TaskView = Backbone.View.extend({
-      tagName : "div",
-      className : "taskList",
+     el: $('#main'),
 
     /**
       * Initializes the view
       */
       initialize: function(){
-        _.bindAll(this, 'render');
+        _.bindAll(this);
 
         this.render();
       },
 
       events: {
-
+        "click #deleteAllDoneButton": "deleteAllDone",
       },
 
     /**
@@ -40,9 +39,23 @@ define([
 
         this.el.innerHTML = _.template(TaskListTemplate,data);
 
-        $('#main').html(this.el);
-
         return this;
+      },
+
+      /**
+      * Deletes all tasks that are marked as done
+      * @param {event} e Events from the view
+      */
+      deleteAllDone: function(e){
+        this.undelegateEvents();
+
+        _.each(this.collection.models,function(task){
+          if(task.attributes.done){
+            task.destroy();
+          }
+        });
+
+        this.render();
       }
     });
 
