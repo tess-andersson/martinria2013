@@ -1,0 +1,32 @@
+<div class="task">
+
+  <div id="taskName">
+    <%= task.name %>
+  </div>
+
+  <div id="taskDescription">
+    <%= task.description %>
+  </div>
+
+  <div id="taskDescription">
+    Skapad: <%= new Date(task.created) %>
+  </div>
+
+  <div id="taskId">
+    Id: <%= task.id %>
+  </div>
+
+  <div id="taskDone">
+    Klar: <%= task.done %>
+  </div>
+
+  <button id="editButton">Redigera</button>
+
+  <% if (!task.done) {
+   print("<button id='doneButton'>Klar</button>");
+ }
+else {
+  print("<button id='doneButton'>Ej klar</button>");
+} %>
+
+</div>
