@@ -11,7 +11,10 @@ define([
     * Creates a new view
     */
     var newTaskView = Backbone.View.extend({
-      el: $('#main'),
+      tagName: 'div',
+      id: 'taskList',
+
+      template: _.template(NewTaskTemplate),
 
     /**
       * Initializes the view
@@ -33,7 +36,6 @@ define([
       */
       createTask: function(e){
         this.collection.create({name: $("#createNameField").val(), description: $("#createDescriptionField").val()});
-        this.undelegateEvents();
 
         window.location.hash = '';
       },
@@ -43,7 +45,7 @@ define([
       */
       render: function(){
 
-        this.el.innerHTML = _.template(NewTaskTemplate,[]);
+        this.$el.html(this.template());
 
         return this;
       }

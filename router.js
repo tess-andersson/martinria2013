@@ -14,42 +14,38 @@ define([
         "edit/:id": "editTask",
         "new": "newTask",
         "": "index"
-      }
-    });
+      },
 
-  /**
-    * Initializes the router
-    */
-    var initialize = function(){
-
-      var todoRouter = new TodoRouter;
-
-      todoRouter.on('route:showTask', function(id){
+      showTask: function(id){
         var tasksCollection = new TasksCollection();
         var TaskDetailsView = new TaskView({collection: tasksCollection, id: id});
-        TaskDetailsView.render();
-      });
+        $("#main").html(TaskDetailsView.render().el);
+      },
 
-      todoRouter.on('route:editTask', function(){
+      editTask: function(){
         console.log("Edit");
-      });
+      },
 
-      todoRouter.on('route:newTask', function(){
+      newTask: function(){
         var tasksCollection = new TasksCollection();
         var newTaskView = new NewTaskView({collection: tasksCollection});
-        newTaskView.render();
-      });
+        $("#main").html(newTaskView.render().el);
+      },
 
-      todoRouter.on('route:index', function(){
+      index: function(){
         var tasksCollection = new TasksCollection();
         var taskListView = new TaskListView({collection: tasksCollection});
-        taskListView.render();
-      });
+        $("#main").html(taskListView.render().el);
+      },
 
+      /**
+    * Initializes the router
+    */
+    initialize: function(){
+      this.main = "#main";
       Backbone.history.start();
-    };
-
-    return { 
-      initialize: initialize
-    };
+    }
   });
+
+return TodoRouter;
+});

@@ -11,7 +11,10 @@ define([
     * Creates a new view
     */
     var TaskView = Backbone.View.extend({
-     el: $('#main'),
+     tagName: 'div',
+     className: 'taskList',
+
+     template: _.template(TaskListTemplate),
 
     /**
       * Initializes the view
@@ -37,7 +40,9 @@ define([
           tasks: this.collection.toJSON()
         };
 
-        this.el.innerHTML = _.template(TaskListTemplate,data);
+        this.$el.html(this.template(data));
+
+        //this.el.innerHTML = _.template(TaskListTemplate,data);
 
         return this;
       },
@@ -47,7 +52,8 @@ define([
       * @param {event} e Events from the view
       */
       deleteAllDone: function(e){
-        this.undelegateEvents();
+
+        console.log("done");
 
         _.each(this.collection.models,function(task){
           if(task.attributes.done){

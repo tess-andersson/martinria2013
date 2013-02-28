@@ -11,7 +11,10 @@ define([
     * Creates a new view
     */
     var TaskView = Backbone.View.extend({
-     el: $('#main'),
+     tagName: 'div',
+     idName: 'taskList',
+
+     template: _.template(TaskDetailsTemplate),
 
     /**
       * Initializes the view
@@ -40,7 +43,7 @@ define([
           task: task.toJSON()
         };
 
-        this.el.innerHTML = _.template(TaskDetailsTemplate,data);
+        this.$el.html(this.template(data));
 
         return this;
       },
@@ -52,8 +55,6 @@ define([
       */
       toggleDone: function(e){
         this.collection.get(this.id).toggleDone();
-
-        this.undelegateEvents();
 
         window.location.hash = '';
 

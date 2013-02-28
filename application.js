@@ -5,7 +5,7 @@
   function(Backbone,Underscore,Jquery,Backbonelocal,Bootstrap,Router){
     return {
       run: function(){
-        Router.initialize();
+        new Router();
       }
     };
   });
