@@ -20,13 +20,13 @@
     Klar: <%= task.done %>
   </div>
 
-  <button id="editButton">Redigera</button>
+  <a id="editButton" href="#edit/<%= task.id %>" class="btn">Redigera</a>
 
   <% if (!task.done) {
-   print("<button id='doneButton'>Klar</button>");
+   print("<button id='doneButton' class='btn'>Klar</button>");
  }
 else {
-  print("<button id='doneButton'>Ej klar</button>");
+  print("<button id='doneButton' class='btn'>Ej klar</button>");
 } %>
 
 </div>
